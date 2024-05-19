@@ -66,3 +66,12 @@ nmap ]q <Action>(GotoNextError)
 
 " Show hover information
 nnmap <Leader>k <Action>(ShowHoverInfo)
+
+" Don't put to default register when delete char by x on normal mode
+nnoremap x "_x
+
+" highlight word during search
+set hlsearch
+
+" Insert blank line by "enter" key during normal mode
+nnoremap <CR> o<Esc>j
