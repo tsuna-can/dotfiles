@@ -1,1 +1,1 @@
-ln -s ${PWD}/.ideavimrc ~/.ideavimrc
+ln -fs ${PWD}/.ideavimrc ~/.ideavimrc
