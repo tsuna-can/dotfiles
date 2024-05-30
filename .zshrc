@@ -1,5 +1,7 @@
 alias v='nvim'
 alias g='git'
+alias gs='git status'
+alias gc='git checkout'
 
 export PATH="/opt/homebrew/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
@@ -25,3 +27,4 @@ function fzf-select-history() {
 }
 zle -N fzf-select-history
 bindkey '^r' fzf-select-history
+
