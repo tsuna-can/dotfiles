@@ -40,3 +40,6 @@ function ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^]' ghq-fzf
 
+# Load sheldon
+eval "$(sheldon source)"
+
