@@ -6,6 +6,7 @@ vim.api.nvim_set_keymap('n', '<leader>b', ':NvimTreeToggle<CR>', {silent=true})
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeFocus<CR>', {silent=true})
 vim.api.nvim_set_keymap('n', '<C-p>',  ':Telescope find_files<CR>', {noremap=true})
 vim.api.nvim_set_keymap('n', '<C-g>',  ':Telescope live_grep<CR>', {noremap=true})
+vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -41,17 +42,4 @@ require("toggleterm").setup{
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("lspconfig").lua_ls.setup {}
-
-local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({
-	cmd = "lazygit",
-	direction = "float",
-	hidden = true
-})
-
-function _lazygit_toggle()
-	lazygit:toggle()
-end
-
-vim.api.nvim_set_keymap("n", "lg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 

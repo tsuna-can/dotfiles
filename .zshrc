@@ -2,10 +2,15 @@ alias v='nvim'
 alias g='git'
 alias gs='git status'
 alias gc='git checkout'
+alias k='kubectl'
+alias lg='lazygit'
 
 export PATH="/opt/homebrew/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# kubectl completion
+source <(kubectl completion zsh)
 
 # History setting
 HISTFILE=~/.zsh_history
