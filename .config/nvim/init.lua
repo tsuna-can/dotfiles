@@ -1,5 +1,8 @@
 vim.g.mapleader = ' '
 vim.opt.number = true
+vim.opt.ignorecase = true
+vim.opt.hlsearch = true
+vim.opt.scrolloff = 30
 
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 vim.api.nvim_set_keymap('n', '<leader>b', ':NvimTreeToggle<CR>', {silent=true})
