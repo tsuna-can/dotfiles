@@ -4,6 +4,7 @@ alias gs='git status'
 alias gc='git checkout'
 alias k='kubectl'
 alias lg='lazygit'
+alias ghr='cd $(ghq root)'
 
 export PATH="/opt/homebrew/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
