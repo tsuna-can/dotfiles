@@ -4,6 +4,9 @@ ln -fs ${PWD}/.ideavimrc ~/.ideavimrc
 # zsh
 ln -fs ${PWD}/.zshrc ~/.zshrc
 
+# wezterm
+ln -fs ${PWD}/.wezterm ~/.wezterm
+
 # .config
 SOURCE_DIR="${PWD}/.config"
 TARGET_DIR="${HOME}/.config"
