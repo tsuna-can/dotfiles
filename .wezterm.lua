@@ -63,6 +63,11 @@ config.keys = {
     mods = 'CMD',
     action = act.CloseCurrentPane { confirm = true }
   },
+  {
+    key = 'C',
+    mods = 'CMD|SHIFT',
+    action = act.ActivateCopyMode
+  }
 }
 
 return config
