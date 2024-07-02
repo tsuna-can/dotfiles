@@ -1,4 +1,4 @@
-alias v='nvim'
+alias v='nvim .'
 alias g='git'
 alias gs='git status'
 alias gc='git checkout'
