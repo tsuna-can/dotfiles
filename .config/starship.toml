@@ -14,8 +14,7 @@ $git_branch\
 $git_status\
 [](fg:#394260)\
 $fill\
-[](fg:#212736)\
-[](fg:#1d2230 bg:#212736)\
+[](fg:#1d2230)\
 $time\
 \n$character
 """
