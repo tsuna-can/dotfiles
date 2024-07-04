@@ -6,4 +6,5 @@ opt.hlsearch = true
 opt.scrolloff = 30
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
+opt.laststatus = 2
 
