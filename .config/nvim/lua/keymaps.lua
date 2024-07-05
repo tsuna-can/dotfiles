@@ -3,10 +3,10 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = ' '
 
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-map('n', '<leader>b', ':NvimTreeToggle<CR>', {silent=true})
-map('n', '<leader>e', ':NvimTreeFocus<CR>', {silent=true})
-map('n', '<C-p>',  ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', {noremap=true})
-map('n', '<C-g>',  ':Telescope live_grep<CR>', {noremap=true})
+map('n', '<leader>b', ':NvimTreeToggle<CR>', { silent = true })
+map('n', '<leader>e', ':NvimTreeFocus<CR>', { silent = true })
+map('n', '<C-p>', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', { noremap = true })
+map('n', '<C-g>', ':Telescope live_grep<CR>', { noremap = true })
 
 -- Move to previous/next
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
@@ -29,4 +29,11 @@ map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
 map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
+-- Format
+map(
+  "n",
+  "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>",
+  opts
+)
 
