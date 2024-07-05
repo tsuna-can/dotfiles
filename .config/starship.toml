@@ -15,6 +15,7 @@ $git_status\
 [](fg:#394260)\
 $fill\
 [](fg:#1d2230)\
+$cmd_duration\
 $time\
 \n$character
 """
@@ -63,6 +64,11 @@ format = "$symbol "
 success_symbol = "[\uf054](#87D96C)"
 # \uf00d: nf-fa-remove
 error_symbol = "[\uf00d \uf054](#F28779)"
+
+[cmd_duration]
+style = "bg:#1d2230"
+format = "[ $duration]($style)"
+min_time = 0
 
 [time]
 disabled = false
