@@ -7,4 +7,7 @@ opt.scrolloff = 30
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
 opt.laststatus = 2
+opt.expandtab = true
+opt.tabstop = 2
+opt.shiftwidth = 2
 
