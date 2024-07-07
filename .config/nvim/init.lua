@@ -28,11 +28,26 @@ require("lazy").setup("plugins", {
 })
 
 require('lualine').setup()
-require("toggleterm").setup{
+require("toggleterm").setup {
   direction = 'float',
   open_mapping = [[<c-\>]],
 }
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("lspconfig").lua_ls.setup {}
+require("lspconfig").jdtls.setup {
+  root_dir = require('lspconfig').util.root_pattern('.git', 'pom.xml', 'build.gradle'),
+  settings = {
+    java = {
+      configuration = {
+        format = {
+          enabled = true,
+          settings = {
+            url = 'https://github.com/google/google-java-format',
+          },
+        },
+      },
+    },
+  },
+}
 
