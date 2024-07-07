@@ -2,7 +2,10 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 vim.g.mapleader = ' '
 
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+-- LSP
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+
 map('n', '<leader>b', ':NvimTreeToggle<CR>', { silent = true })
 map('n', '<leader>e', ':NvimTreeFocus<CR>', { silent = true })
 map('n', '<C-p>', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', { noremap = true })
