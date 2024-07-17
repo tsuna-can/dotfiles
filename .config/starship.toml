@@ -13,6 +13,7 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:#394260)\
+$kubernetes\
 $fill\
 [](fg:#1d2230)\
 $cmd_duration\
@@ -75,4 +76,23 @@ disabled = false
 time_format = "%T" 
 style = "bg:#1d2230"
 format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+
+[kubernetes]
+disabled = false
+format = "[$symbol$context/$namespace]($style)"
+style = "dimmed green"
+symbol = " "
+
+[[kubernetes.contexts]]
+context_pattern = ".+prod.*"
+style = "red"
+symbol = ' 🚨 '
+
+[[kubernetes.contexts]]
+context_pattern = ".+stg.*"
+context_alias = "stg"
+
+[[kubernetes.contexts]]
+context_pattern = ".+dev.*"
+context_alias = "dev"
 
