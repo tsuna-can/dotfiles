@@ -34,16 +34,16 @@ require("toggleterm").setup {
 }
 require("mason").setup()
 require("mason-lspconfig").setup {
-	ensure_installed = {
-			"lua_ls",
-			"bashls",
-      'dockerls',
-      'jdtls',
-			"jsonls",
-			"tsserver",
-      'taplo',
-      'yamlls'
-	}
+  ensure_installed = {
+    "lua_ls",
+    "bashls",
+    'dockerls',
+    'jdtls',
+    "jsonls",
+    "tsserver",
+    'taplo',
+    'yamlls'
+  }
 }
 require('mason-lspconfig').setup_handlers {
   function(server_name)
