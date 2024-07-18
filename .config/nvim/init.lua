@@ -33,21 +33,21 @@ require("toggleterm").setup {
   open_mapping = [[<c-\>]],
 }
 require("mason").setup()
-require("mason-lspconfig").setup()
-require("lspconfig").lua_ls.setup {}
-require("lspconfig").jdtls.setup {
-  root_dir = require('lspconfig').util.root_pattern('.git', 'pom.xml', 'build.gradle'),
-  settings = {
-    java = {
-      configuration = {
-        format = {
-          enabled = true,
-          settings = {
-            url = 'https://github.com/google/google-java-format',
-          },
-        },
-      },
-    },
-  },
+require("mason-lspconfig").setup {
+	ensure_installed = {
+			"lua_ls",
+			"bashls",
+      'dockerls',
+      'jdtls',
+			"jsonls",
+			"tsserver",
+      'taplo',
+      'yamlls'
+	}
+}
+require('mason-lspconfig').setup_handlers {
+  function(server_name)
+    require('lspconfig')[server_name].setup {}
+  end,
 }
 
