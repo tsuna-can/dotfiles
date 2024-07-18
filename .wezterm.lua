@@ -16,7 +16,7 @@ local act = wezterm.action
 config.font = wezterm.font("Hack Nerd Font", { weight = "Medium", stretch = "Normal", style = "Normal" })
 
 -- フォントサイズの設定
-config.font_size = 14
+config.font_size = 16
 
 -- ショートカットキー設定
 config.keys = {
@@ -71,3 +71,4 @@ config.keys = {
 }
 
 return config
+
