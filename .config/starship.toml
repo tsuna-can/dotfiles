@@ -26,17 +26,6 @@ add_newline = true
 [fill]
 symbol = ' '
 
-[os]
-format = "[$symbol]($style)"
-style = "fg:#2E3440 bg:#88C0D0 bold"
-disabled = false
-
-[username]
-show_always = true
-style_user = "fg:#DFBFFF"
-style_root = "fg:#F27983"
-format = "[$user]($style)"
-
 [directory]
 style = "fg:#2E3440 bg:#88C0D0 bold"
 format = "[ $path ]($style)"
