@@ -2,19 +2,28 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 vim.g.mapleader = ' '
 
+-- Select all
+map("n", "<C-a>", "gg<S-v>G")
+
+-- Delete without affecting the registers
+map("n", "x", '"_x')
+
 -- LSP
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
+-- NvimTree
 map('n', '<leader>b', ':NvimTreeToggle<CR>', { silent = true })
 map('n', '<leader>e', ':NvimTreeFocus<CR>', { silent = true })
+
+-- Telescope
 map('n', '<C-p>', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', { noremap = true })
 map('n', '<C-g>', ':Telescope live_grep<CR>', { noremap = true })
 
--- Move to previous/next
+-- Move to previous/next buffer
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
--- Re-order to previous/next
+-- Re-order to previous/next buffer
 map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
 map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
 -- Goto buffer in position...

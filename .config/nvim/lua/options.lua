@@ -11,4 +11,5 @@ opt.expandtab = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.wrap = false
+opt.laststatus = 3
 
