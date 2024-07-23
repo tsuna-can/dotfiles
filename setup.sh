@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+# SDKMAN
+curl -s "https://get.sdkman.io" | bash
+source "${HOME}/.sdkman/bin/sdkman-init.sh"
+
 # Function to create a symbolic link if the file does not exist
 create_symlink() {
   local target_file="$1"
@@ -12,6 +16,7 @@ create_symlink() {
   fi
 }
 
+# Create symbolic links
 create_symlink ".zshrc" "${HOME}/.zshrc"
 create_symlink ".wezterm.lua" "${HOME}/.wezterm.lua"
 create_symlink ".hammerspoon" "${HOME}/.hammerspoon"
