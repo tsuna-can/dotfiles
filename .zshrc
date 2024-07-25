@@ -1,5 +1,7 @@
 alias v='nvim .'
 alias code='code .'
+alias ..='cd ..'
+alias ...='cd ../..'
 alias g='git'
 alias gs='git status'
 alias gc='git checkout'

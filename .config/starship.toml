@@ -67,14 +67,15 @@ symbol = " "
 
 [[kubernetes.contexts]]
 context_pattern = ".+prod.*"
+context_alias = "PROD"
 style = "red"
 symbol = ' 🚨 '
 
 [[kubernetes.contexts]]
 context_pattern = ".+stg.*"
-context_alias = "stg"
+context_alias = "STG"
 
 [[kubernetes.contexts]]
 context_pattern = ".+dev.*"
-context_alias = "dev"
+context_alias = "DEV"
 
