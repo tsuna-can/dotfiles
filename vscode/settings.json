@@ -1,0 +1,10 @@
+{
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "window.customTitleBarVisibility": "windowed",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "extensions.autoUpdate": true,
+  "workbench.editor.enablePreview": false,
+}
+

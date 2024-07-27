@@ -27,5 +27,5 @@ create_symlink ".config/starship.toml" "${HOME}/.config/starship.toml"
 
 # Edt setting of macOS
 defaults write -g KeyRepeat -int 1
-defaults write -g InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -int 12
 
