@@ -20,18 +20,19 @@ config.font_size = 16
 
 -- ショートカットキー設定
 config.keys = {
-  -- Ctrl+tで新しいタブを作成
+  -- Cmd+tで新しいタブを作成
   {
     key = 't',
     mods = 'CMD',
     action = act.SpawnTab 'CurrentPaneDomain',
   },
-  -- Ctrl+dで新しいペインを作成(画面を分割)
+  -- Cmd+dで新しいペインを作成(画面を分割)
   {
     key = 'd',
     mods = 'CMD',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
+  -- Cmd+左矢印でカーソルを前の単語に移動
   {
     key = "LeftArrow",
     mods = "CMD",
@@ -40,7 +41,7 @@ config.keys = {
       mods = "META",
     },
   },
-  -- Ctrl+右矢印でカーソルを次の単語に移動
+  -- Cmd+右矢印でカーソルを次の単語に移動
   {
     key = "RightArrow",
     mods = "CMD",
@@ -58,11 +59,13 @@ config.keys = {
       mods = "CTRL",
     },
   },
+  -- Cmd+wで現在のペインを閉じる
   {
     key = 'w',
     mods = 'CMD',
     action = act.CloseCurrentPane { confirm = true }
   },
+  -- Cmd+Shift+cでコピーモードを開始
   {
     key = 'C',
     mods = 'CMD|SHIFT',
