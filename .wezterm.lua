@@ -70,7 +70,13 @@ config.keys = {
     key = 'C',
     mods = 'CMD|SHIFT',
     action = act.ActivateCopyMode
-  }
+  },
+  -- Cmd+Ctrl+fでフルスクリーンモードを切り替え
+  {
+    key = 'f',
+    mods = 'CMD|CTRL',
+    action = wezterm.action.ToggleFullScreen,
+  },
 }
 
 return config
