@@ -19,13 +19,22 @@ setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
-
+setopt hist_save_no_dups
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt globdots
+setopt append_history
+setopt extended_history
+setopt share_history
 setopt print_eight_bit
 
 # fzf history
 function fzf-select-history() {
-    BUFFER=$(history -n -r 1 | fzf --query "$LBUFFER" --reverse)
-    CURSOR=$#BUFFER
+    local selected="$(history -inr 1 | fzf --exit-0 --query "$LBUFFER" --reverse | cut -d' ' -f4-)"
+    if [ -n "$selected" ]; then
+        BUFFER="$selected"
+        CURSOR=$#BUFFER
+    fi
     zle reset-prompt
 }
 zle -N fzf-select-history

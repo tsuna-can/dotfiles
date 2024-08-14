@@ -25,9 +25,9 @@ defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file 
 github = "zsh-users/zsh-syntax-highlighting"
 apply = ["defer"]
 
-[plugins.zsh-autocomplete]
-github = "marlonrichert/zsh-autocomplete"
-apply = ["defer"]
+# [plugins.zsh-autocomplete]
+# github = "marlonrichert/zsh-autocomplete"
+# apply = ["defer"]
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
