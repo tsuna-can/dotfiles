@@ -15,14 +15,36 @@ require('options')
 require('keymaps')
 
 -- Choose the plugins to load based on the environment
+local is_raspberrypi = false
 local is_vscode = vim.g.vscode == 1
+
+-- Check if we are running on a Raspberry Pi
+local handle = io.popen("uname -a")
+if handle then
+    local sysinfo = handle:read("*a")
+    handle:close()
+    if sysinfo and sysinfo:match("raspberry") then
+        is_raspberrypi = true
+    end
+end
+
+-- Change the plugins to load based on the environment
 local plugins = is_vscode and
     {
       { import = "plugins.im-select-nvim" },
       { import = "plugins.quick-scope" }
     }
+    or is_raspberrypi and
+    {
+      -- load minimal necessary plugins because of the limited resources
+      { import = "plugins.nvim-tree" },
+      { import = "plugins.barbar-nvim"},
+      { import = "plugins.lualine"}
+
+    }
     or
     {
+      -- load all plugins
       { import = "plugins" }
     }
 
