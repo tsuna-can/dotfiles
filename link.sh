@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-# SDKMAN
-curl -s "https://get.sdkman.io" | bash
-source "${HOME}/.sdkman/bin/sdkman-init.sh"
-
 # Function to create a symbolic link if the file does not exist
 create_symlink() {
   local target_file="$1"
@@ -25,8 +21,4 @@ create_symlink ".ideavimrc" "${HOME}/.ideavimrc"
 create_symlink ".config/nvim" "${HOME}/.config/nvim"
 create_symlink ".config/sheldon" "${HOME}/.config/sheldon"
 create_symlink ".config/starship.toml" "${HOME}/.config/starship.toml"
-
-# Edt setting of macOS
-defaults write -g KeyRepeat -int 1
-defaults write -g InitialKeyRepeat -int 13
 

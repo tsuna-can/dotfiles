@@ -17,6 +17,20 @@ install-nvim-snapd:
 link-nvim:
 	ln -fsv ${PWD}/.config/nvim ${HOME}/.config/nvim
 
+.PHONY: install-sdkman
+install-sdkman:
+	curl -s "https://get.sdkman.io" | bash
+	source "${HOME}/.sdkman/bin/sdkman-init.sh"
+
+.PHONY: mac-config
+mac-config:
+	defaults write -g KeyRepeat -int 1
+	defaults write -g InitialKeyRepeat -int 13
+
+# Setup for Mac
+.PHONY: setup-mac
+setup-mac: install-sdkman mac-config
+
 # Setup for Raspberry Pi
 .PHONY: setup-raspberrypi
 setup-raspberrypi: install-zsh install-nvim-snapd link-nvim

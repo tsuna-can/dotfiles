@@ -12,13 +12,17 @@ $ git clone https://github.com/tsuna-can/dotfiles.git
 
 ## Setup for Mac
 ```shell
+# Install apps via Homebrew
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 $ brew bundle
-$ sh setup.sh
+
+# Edit settings and make symbolic links
+$ make setup-mac
+$ sh link.sh
 ```
 
 ## Setup for Raspberry Pi
-Edit /etc/pam.d/chsh to change shell.
+Edit `/etc/pam.d/chsh` to change shell.
 Comment out the following line.
 ```
 # auth       required   pam_shells.so
