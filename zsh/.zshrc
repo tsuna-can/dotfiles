@@ -8,18 +8,20 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # kubectl completion
+autoload -Uz compinit
+compinit
 source <(kubectl completion zsh)
 
 # History setting
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
-setopt share_history
-setopt hist_ignore_dups
 setopt hist_ignore_all_dups
+setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
+setopt share_history
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt globdots
@@ -30,7 +32,7 @@ setopt print_eight_bit
 
 # fzf history
 function fzf-select-history() {
-    local selected="$(history -inr 1 | fzf --exit-0 --query "$LBUFFER" --reverse | cut -d' ' -f4-)"
+    local selected="$(history -nr 1 | awk '!a[$0]++' | fzf --exit-0 --query "$LBUFFER" --reverse | cut -d' ' -f4-)"
     if [ -n "$selected" ]; then
         BUFFER="$selected"
         CURSOR=$#BUFFER
