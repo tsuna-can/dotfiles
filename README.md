@@ -12,13 +12,9 @@ $ git clone https://github.com/tsuna-can/dotfiles.git
 
 ## Setup for Mac
 ```shell
-# Install apps via Homebrew
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 $ brew bundle
-
-# Edit settings and make symbolic links
 $ make setup-mac
-$ sh link.sh
 ```
 
 ## Setup for Raspberry Pi
@@ -37,3 +33,4 @@ Add snapd to .zshrc.
 ```shell
 $ echo 'export PATH=$PATH:/snap/bin' >> ~/.zshrc
 ```
+

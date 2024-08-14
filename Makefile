@@ -27,9 +27,14 @@ mac-config:
 	defaults write -g KeyRepeat -int 1
 	defaults write -g InitialKeyRepeat -int 13
 
+.PHONY: link
+link:
+	sudo chmod +x ./link.sh
+	./link.sh
+
 # Setup for Mac
 .PHONY: setup-mac
-setup-mac: install-sdkman mac-config
+setup-mac: install-sdkman mac-config link
 
 # Setup for Raspberry Pi
 .PHONY: setup-raspberrypi
