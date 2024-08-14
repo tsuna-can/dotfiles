@@ -1,0 +1,23 @@
+.PHONY: all
+all:
+	@echo "Please specify a target"
+
+.PHONY: install-zsh
+install-zsh:
+	sudo apt install zsh
+	chsh -s /usr/bin/zsh
+
+# On Raspberry Pi, to install latest nvim, use snapd
+.PHONY: install-nvim-snapd
+install-nvim-snapd:
+	sudo apt install snapd
+	sudo snap install nvim --classic
+
+.PHONY: link-nvim
+link-nvim:
+	ln -fsv ${PWD}/.config/nvim ${HOME}/.config/nvim
+
+# Setup for Raspberry Pi
+.PHONY: setup-raspberrypi
+setup-raspberrypi: install-zsh install-nvim-snapd link-nvim
+
