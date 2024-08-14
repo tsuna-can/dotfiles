@@ -1,18 +1,7 @@
-alias v='nvim .'
-alias code='code .'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias g='git'
-alias gs='git status'
-alias gc='git checkout'
-alias k='kubectl'
-alias kgp='kubectl get pods'
-alias kgj='kubectl get jobs'
-alias kgcj='kubectl get cronjobs'
-alias kgd='kubectl get deployments'
-alias pm='podman'
-alias lg='lazygit'
-alias ghr='cd $(ghq root)'
+# Load aliases
+if [ -f ~/.zsh_aliases ]; then
+  source ~/.zsh_aliases
+fi
 
 export PATH="/opt/homebrew/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
