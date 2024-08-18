@@ -32,7 +32,7 @@ setopt print_eight_bit
 
 # fzf history
 function fzf-select-history() {
-    local selected="$(history -nr 1 | awk '!a[$0]++' | fzf --exit-0 --query "$LBUFFER" --reverse | cut -d' ' -f4-)"
+    local selected="$(history -nr 1 | awk '!a[$0]++' | fzf --exit-0 --query "$LBUFFER" --reverse )"
     if [ -n "$selected" ]; then
         BUFFER="$selected"
         CURSOR=$#BUFFER

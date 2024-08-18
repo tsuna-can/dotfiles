@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 opt.number = true
+opt.relativenumber = true
 opt.ignorecase = true
 opt.hlsearch = true
 opt.scrolloff = 30
