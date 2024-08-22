@@ -15,6 +15,7 @@ create_symlink() {
 # Create symbolic links
 create_symlink "zsh/.zshrc" "${HOME}/.zshrc"
 create_symlink "zsh/.zsh_aliases" "${HOME}/.zsh_aliases"
+create_symlink "zsh/.zsh_functions" "${HOME}/.zsh_functions"
 create_symlink ".wezterm.lua" "${HOME}/.wezterm.lua"
 create_symlink ".hammerspoon" "${HOME}/.hammerspoon"
 create_symlink ".ideavimrc" "${HOME}/.ideavimrc"

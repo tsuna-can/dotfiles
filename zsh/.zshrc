@@ -3,6 +3,11 @@ if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
 fi
 
+# Load functions
+if [ -f ~/.zsh_functions ]; then
+  source ~/.zsh_functions
+fi
+
 export PATH="/opt/homebrew/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -30,33 +35,10 @@ setopt extended_history
 setopt share_history
 setopt print_eight_bit
 
-# fzf history
-function fzf-select-history() {
-    local selected="$(history -nr 1 | awk '!a[$0]++' | fzf --exit-0 --query "$LBUFFER" --reverse )"
-    if [ -n "$selected" ]; then
-        BUFFER="$selected"
-        CURSOR=$#BUFFER
-    fi
-    zle reset-prompt
-}
-zle -N fzf-select-history
-bindkey '^r' fzf-select-history
-
-# Seach and tansit to repo by ghq
-function ghq-fzf() {
-  local src=$(ghq list | fzf --preview "ls -laTp $(ghq root)/{} | tail -n+4 | awk '{print \$9\"/\"\$6\"/\"\$7 \" \" \$10}'")
-  if [ -n "$src" ]; then
-    BUFFER="cd $(ghq root)/$src"
-    zle accept-line
-  fi
-  zle -R -c
-}
-zle -N ghq-fzf
-bindkey '^]' ghq-fzf
-
 # Load sheldon
 eval "$(sheldon source)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
