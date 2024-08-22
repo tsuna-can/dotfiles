@@ -54,9 +54,6 @@ function ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^]' ghq-fzf
 
-# zoxide
-eval "$(zoxide init zsh --hook prompt )"
-
 # Load sheldon
 eval "$(sheldon source)"
 

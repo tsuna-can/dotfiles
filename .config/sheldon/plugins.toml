@@ -34,3 +34,7 @@ github = "zsh-users/zsh-autosuggestions"
 use = ["{{ name }}.zsh"]
 apply = ["defer"]
 
+[plugins.zoxide]
+github = "ajeetdsouza/zoxide"
+apply = ["defer"]
+
