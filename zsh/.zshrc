@@ -8,14 +8,12 @@ if [ -f ~/.zsh_functions ]; then
   source ~/.zsh_functions
 fi
 
+# To use nvim in edit-command-line
+EDITOR=nvim
+
 export PATH="/opt/homebrew/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
-# kubectl completion
-autoload -Uz compinit
-compinit
-source <(kubectl completion zsh)
 
 # History setting
 HISTFILE=~/.zsh_history
