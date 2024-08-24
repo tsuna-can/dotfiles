@@ -18,6 +18,9 @@ config.font = wezterm.font("Hack Nerd Font", { weight = "Medium", stretch = "Nor
 -- フォントサイズの設定
 config.font_size = 16
 
+-- カーソルの設定
+config.default_cursor_style = "SteadyBar"
+
 -- ショートカットキー設定
 config.keys = {
   -- Cmd+tで新しいタブを作成
