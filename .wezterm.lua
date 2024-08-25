@@ -53,15 +53,6 @@ config.keys = {
       mods = "META",
     },
   },
-  -- Ctrl+Backspaceで前の単語を削除
-  {
-    key = "Backspace",
-    mods = "CTRL",
-    action = act.SendKey {
-      key = "w",
-      mods = "CTRL",
-    },
-  },
   -- Cmd+wで現在のペインを閉じる
   {
     key = 'w',
