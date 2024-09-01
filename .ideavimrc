@@ -75,3 +75,8 @@ set hlsearch
 
 " Insert blank line by "enter" key during normal mode
 nnoremap <CR> o<Esc>j
+
+" Move to next/previous tab
+nnoremap <Leader>. :tabnext<CR>
+nnoremap <Leader>, :tabprevious<CR>
+

@@ -41,12 +41,9 @@ format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
 style = "bg:#394260"
 format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)[](fg:#394260)'
 
-[character]
-format = "$symbol "
-# \uf054: nf-fa-chevron_right
-success_symbol = "[\uf054](#87D96C)"
-# \uf00d: nf-fa-remove
-error_symbol = "[\uf00d \uf054](#F28779)"
+[character] 
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
 
 [cmd_duration]
 style = "bg:#1d2230"
