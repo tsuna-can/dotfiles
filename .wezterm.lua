@@ -21,6 +21,31 @@ config.font_size = 16
 -- カーソルの設定
 config.default_cursor_style = "SteadyBar"
 
+-- タイトルバーを非表示
+config.window_decorations = "RESIZE"
+
+-- タブ追加ボタンを非表示
+config.show_new_tab_button_in_tab_bar = false
+
+-- タブのスタイル設定
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  local background = "#5c6d74"
+  local foreground = "#FFFFFF"
+
+  if tab.is_active then
+    background = "#ae8b2d"
+    foreground = "#FFFFFF"
+  end
+
+  local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
+
+  return {
+    { Background = { Color = background } },
+    { Foreground = { Color = foreground } },
+    { Text = title },
+  }
+end)
+
 -- ショートカットキー設定
 config.keys = {
   -- Cmd+tで新しいタブを作成
@@ -53,12 +78,6 @@ config.keys = {
       mods = "META",
     },
   },
-  -- Cmd+wで現在のペインを閉じる
-  {
-    key = 'w',
-    mods = 'CMD',
-    action = act.CloseCurrentPane { confirm = true }
-  },
   -- Cmd+Shift+cでコピーモードを開始
   {
     key = 'C',
@@ -74,4 +93,3 @@ config.keys = {
 }
 
 return config
-
