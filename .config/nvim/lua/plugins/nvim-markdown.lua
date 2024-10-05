@@ -1,4 +1,7 @@
 return {
-  "ixru/nvim-markdown"
+  "ixru/nvim-markdown",
+  config = function()
+    vim.cmd "map <Plug> <Plug>Markdown_Fold"
+  end,
 }
 
