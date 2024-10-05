@@ -1,0 +1,33 @@
+local parsers_maintained = {
+  'lua',
+  'typescript',
+  'scss',
+  'css',
+  'bash',
+  'json',
+  'jsonc',
+  'javascript',
+  'markdown',
+  'markdown_inline',
+  'tsx',
+  'html'
+}
+
+local M = {
+  "nvim-treesitter/nvim-treesitter",
+  build = function()
+    require("nvim-treesitter.install").update({ with_sync = true })()
+  end,
+  config = function()
+    local configs = require("nvim-treesitter.configs")
+    configs.setup({
+      ensure_installed = parsers_maintained,
+      sync_install = false,
+      highlight = { enable = true },
+      indent = { enable = true },
+    })
+  end,
+}
+
+return { M }
+
