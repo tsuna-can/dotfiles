@@ -27,6 +27,10 @@ config.window_decorations = "RESIZE"
 -- タブ追加ボタンを非表示
 config.show_new_tab_button_in_tab_bar = false
 
+-- Hide tab close button
+-- As of now(2024/10), only nightly version supports this feature
+config.show_close_tab_button_in_tabs = false
+
 -- タブのスタイル設定
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local background = "#5c6d74"
