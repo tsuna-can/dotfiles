@@ -31,8 +31,7 @@ end
 -- Change the plugins to load based on the environment
 local plugins = is_vscode and
     {
-      { import = "plugins.im-select-nvim" },
-      { import = "plugins.quick-scope" }
+      { import = "plugins.im-select-nvim" }
     }
     or is_raspberrypi and
     {

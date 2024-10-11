@@ -1,6 +1,7 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
+  version = "4.4.7", -- https://github.com/folke/noice.nvim/issues/931
   opts = {
     -- add any options here
   },
