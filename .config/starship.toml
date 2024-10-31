@@ -28,7 +28,7 @@ symbol = ' '
 [directory]
 style = "fg:#2E3440 bg:#88C0D0 bold"
 format = "[ $path ]($style)"
-truncation_length = 10
+truncation_length = 1
 truncate_to_repo = false
 truncation_symbol = "…/"
 
