@@ -7,9 +7,7 @@ return {
         "lua_ls",
         "bashls",
         'dockerls',
-        'jdtls',
         "jsonls",
-        "tsserver",
         'taplo',
         'yamlls'
       }
