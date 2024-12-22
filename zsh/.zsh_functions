@@ -26,7 +26,7 @@ bindkey '^]' ghq-fzf
 function fzf-copy-pod-name() {
   zle accept-line
   echo "Start pod selection..."
-  local selected_line=$(kubectl get pods -n airflow --no-headers | fzf --exit-0 --query "$LBUFFER" --prompt="Select a pod: " --height 40% --reverse)
+  local selected_line=$(kubectl get pods --no-headers | fzf --exit-0 --query "$LBUFFER" --prompt="Select a pod: " --height 40% --reverse)
   if [ -n "$selected_line" ]; then
     local selected_pod=$(echo "$selected_line" | awk '{print $1}')
     echo -n "$selected_pod" | pbcopy # only for macOS

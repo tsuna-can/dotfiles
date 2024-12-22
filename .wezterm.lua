@@ -24,6 +24,12 @@ config.default_cursor_style = "SteadyBar"
 -- タイトルバーを非表示
 config.window_decorations = "RESIZE"
 
+-- ウィンドウの枠線の設定
+config.window_frame = {
+  border_bottom_height = '0.1cell',
+  border_bottom_color = 'white',
+}
+
 -- タブ追加ボタンを非表示
 config.show_new_tab_button_in_tab_bar = false
 
@@ -97,3 +103,4 @@ config.keys = {
 }
 
 return config
+
