@@ -27,7 +27,7 @@ config.window_decorations = "RESIZE"
 -- ウィンドウの枠線の設定
 config.window_frame = {
   border_bottom_height = '0.1cell',
-  border_bottom_color = 'white',
+  border_bottom_color = '#5c6d74',
 }
 
 -- タブ追加ボタンを非表示
