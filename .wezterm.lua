@@ -6,17 +6,16 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- カラースキームの設定
-config.color_scheme = 'TokyoNight'
+config.automatically_reload_config = true
 
 -- ショートカットキー設定
 local act = wezterm.action
 
 -- フォントの設定
-config.font = wezterm.font("Hack Nerd Font", { weight = "Medium", stretch = "Normal", style = "Normal" })
+config.font = wezterm.font("Firge35Nerd Console")
 
 -- フォントサイズの設定
-config.font_size = 16
+config.font_size = 15
 
 -- カーソルの設定
 config.default_cursor_style = "SteadyBar"
@@ -24,10 +23,12 @@ config.default_cursor_style = "SteadyBar"
 -- タイトルバーを非表示
 config.window_decorations = "RESIZE"
 
--- ウィンドウの枠線の設定
-config.window_frame = {
-  border_bottom_height = '0.1cell',
-  border_bottom_color = '#5c6d74',
+-- ウィンドウのpaddingの設定
+config.window_padding = {
+  left = 2,
+  right = 0,
+  top = 0,
+  bottom = 0,
 }
 
 -- タブ追加ボタンを非表示
@@ -55,6 +56,10 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     { Text = title },
   }
 end)
+
+-- ウィンドウの背景の透過度とぼかしの設定
+config.window_background_opacity = 0.6
+config.macos_window_background_blur = 20
 
 -- ショートカットキー設定
 config.keys = {
