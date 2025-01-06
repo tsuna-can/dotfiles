@@ -58,7 +58,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 -- ウィンドウの背景の透過度とぼかしの設定
-config.window_background_opacity = 0.6
+config.window_background_opacity = 0.75
 config.macos_window_background_blur = 20
 
 -- ショートカットキー設定
