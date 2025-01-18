@@ -7,5 +7,16 @@
   "extensions.autoUpdate": true,
   "workbench.editor.enablePreview": false,
   "workbench.startupEditor": "none",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "dev.containers.dockerPath": "podman",
+  "dev.containers.dockerComposePath": "podman-compose",
+  "dotfiles.repository": "https://github.com/tsuna-can/dotfiles",
+  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.installCommand": "/vscode/setup_devcontainer.sh"
 }
 
