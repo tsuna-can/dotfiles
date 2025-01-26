@@ -38,12 +38,12 @@ apply = ["defer"]
 github = "ajeetdsouza/zoxide"
 apply = ["defer"]
 
-[plugins.edit-command-line]
-inline = '''
-zsh-defer autoload -Uz edit-command-line
-zsh-defer zle -N edit-command-line
-zsh-defer bindkey "^[" edit-command-line
-'''
+# [plugins.edit-command-line]
+# inline = '''
+# zsh-defer autoload -Uz edit-command-line
+# zsh-defer zle -N edit-command-line
+# zsh-defer bindkey "^[" edit-command-line
+# '''
 
 [plugins.kubectl]
 inline = '''
