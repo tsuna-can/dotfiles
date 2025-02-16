@@ -50,3 +50,6 @@ map(
   opts
 )
 
+-- Save
+map('n', '<leader>w', ':w<CR>', opts)
+
