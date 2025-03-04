@@ -9,7 +9,8 @@ return {
         'dockerls',
         "jsonls",
         'taplo',
-        'yamlls'
+        'yamlls',
+        'gopls'
       }
     }
     require('mason-lspconfig').setup_handlers {
