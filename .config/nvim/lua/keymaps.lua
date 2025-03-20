@@ -12,9 +12,8 @@ map("n", "x", '"_x')
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
--- NvimTree
-map('n', '<leader>b', ':NvimTreeToggle<CR>', { silent = true })
-map('n', '<leader>e', ':NvimTreeFocus<CR>', { silent = true })
+-- Oil 
+map('n', '<leader>e', ':Oil<CR>')
 
 -- Telescope
 map('n', '<C-p>', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', { noremap = true })
