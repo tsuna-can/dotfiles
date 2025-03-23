@@ -26,6 +26,9 @@ return {
 
       -- DAP 仮想テキストの設定
       require("nvim-dap-virtual-text").setup()
+
+      -- launch.json に設定されたデバッグ構成を読み込む
+      require('dap.ext.vscode').load_launchjs()
     end,
   },
 }
