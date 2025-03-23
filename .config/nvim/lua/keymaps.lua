@@ -6,14 +6,14 @@ vim.g.mapleader = ' '
 map("n", "<C-a>", "gg<S-v>G")
 
 -- Delete without affecting the registers
-map("n", "x", '"_x')
+map("n", "x", '"_x', opts)
 
 -- LSP
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
--- Oil 
-map('n', '<leader>e', ':Oil<CR>')
+-- Oil
+map('n', '<leader>e', ':Oil<CR>', opts)
 
 -- Telescope
 map('n', '<C-p>', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', { noremap = true })
@@ -22,19 +22,6 @@ map('n', '<C-g>', ':Telescope live_grep<CR>', { noremap = true })
 -- Move to previous/next buffer
 map('n', '<leader>,', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<leader>.', '<Cmd>BufferNext<CR>', opts)
--- Goto buffer in position...
-map('n', '<leader>1', '<Cmd>BufferGoto 1<CR>', opts)
-map('n', '<leader>2', '<Cmd>BufferGoto 2<CR>', opts)
-map('n', '<leader>3', '<Cmd>BufferGoto 3<CR>', opts)
-map('n', '<leader>4', '<Cmd>BufferGoto 4<CR>', opts)
-map('n', '<leader>5', '<Cmd>BufferGoto 5<CR>', opts)
-map('n', '<leader>6', '<Cmd>BufferGoto 6<CR>', opts)
-map('n', '<leader>7', '<Cmd>BufferGoto 7<CR>', opts)
-map('n', '<leader>8', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '<leader>9', '<Cmd>BufferGoto 9<CR>', opts)
-map('n', '<leader>0', '<Cmd>BufferLast<CR>', opts)
--- Close buffer
-map('n', '<leader>d', '<Cmd>BufferClose<CR>', opts)
 -- Save and cloase all buffer
 map('n', '<leader>q', '<Cmd>wa | %bd<CR>', opts)
 -- Move current buffer to the right pane
@@ -51,4 +38,11 @@ map(
 
 -- Save
 map('n', '<leader>w', ':w<CR>', opts)
+
+-- DAP
+map('n', '<leader>du', '<cmd>lua require"dapui".toggle()<CR>', {noremap = true, desc = "Toggle DAP UI"})
+map('n', '<leader>dc', '<cmd>lua require"dap".continue()<CR>', {noremap = true, desc = "Continue Debugging"})
+map('n', '<leader>db', '<cmd>lua require"dap".toggle_breakpoint()<CR>', {noremap = true, desc = "Toggle Breakpoint"})
+map('n', '<leader>dt', '<cmd>lua require"dap".terminate()<CR>', {noremap = true, desc = "Terminate Debugging"})
+map('n', '<leader>dr', '<cmd>lua require"dap".repl.open()<CR>', {noremap = true, desc = "Open REPL"})
 

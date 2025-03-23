@@ -14,6 +14,7 @@ EDITOR=nvim
 export PATH="/opt/homebrew/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # History setting
 HISTFILE=~/.zsh_history
