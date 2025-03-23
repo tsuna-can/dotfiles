@@ -12,6 +12,7 @@ return {
       ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
       ["<C-t>"] = { "actions.select", opts = { tab = true } },
       ["<C-c>"] = { "actions.close", mode = "n" },
+      ["<C-l>"] = "actions.refresh",
       ["-"] = { "actions.parent", mode = "n" },
       ["_"] = { "actions.open_cwd", mode = "n" },
       ["`"] = { "actions.cd", mode = "n" },
