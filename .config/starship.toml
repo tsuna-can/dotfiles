@@ -1,20 +1,8 @@
-# ref:
-# starship configuration reference: https://starship.rs/config/
-# inspired by pure theme: https://github.com/sindresorhus/pure
-# nerd font cheat sheet: https://www.nerdfonts.com/cheat-sheet
-# Ayu Mirage color palette: https://github.com/ayu-theme/ayu-colors
-
-# piece of Ayu Mirage color palette:
-#     fg: #707A8C / #5CCFE6 / #73D0FF / #FFAD66 / #87D96C / #F27983 / #F28779 / #DFBFFF
-
 format = """
 $directory\
-[](fg:#88C0D0 bg:#394260)\
 $git_branch\
-$git_status\
 $kubernetes\
 $fill\
-[](fg:#1d2230)\
 $cmd_duration\
 $time\
 \n$character
@@ -26,7 +14,7 @@ add_newline = true
 symbol = ' '
 
 [directory]
-style = "fg:#2E3440 bg:#88C0D0 bold"
+style = "fg:#268bd2 bg:#073642 bold"
 format = "[ $path ]($style)"
 truncation_length = 1
 truncate_to_repo = false
@@ -34,45 +22,43 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+style = "fg:#b58900 bg:#073642"
+format = "[ $symbol $branch ]($style)"
 
-[git_status]
-style = "bg:#394260"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)[](fg:#394260)'
-
-[character] 
+[character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
 
 [cmd_duration]
-style = "bg:#1d2230"
-format = "[ $duration]($style)"
+style = "fg:#2aa198"
+format = "[  $duration ]($style)"
 min_time = 0
 
 [time]
 disabled = false
-time_format = "%T" 
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+time_format = "%T"
+style = "fg:#859900"
+format = "[  $time ]($style)"
 
 [kubernetes]
 disabled = false
-format = "[$symbol$context/$namespace]($style)"
-style = "dimmed green"
-symbol = " "
+format = "[ $symbol$context/$namespace ]($style)"
+style = "fg:#268bd2 bg:#073642"
+symbol = ""
 
 [[kubernetes.contexts]]
 context_pattern = ".+prod.*"
 context_alias = "PROD"
-style = "red"
-symbol = ' 🚨 '
+style = "fg:#dc322f"
+symbol = '🚨 '
 
 [[kubernetes.contexts]]
 context_pattern = ".+stg.*"
 context_alias = "STG"
+style = "fg:#6c71c4"
 
 [[kubernetes.contexts]]
 context_pattern = ".+dev.*"
 context_alias = "DEV"
+style = "fg:#2aa198"
 
