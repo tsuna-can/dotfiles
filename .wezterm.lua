@@ -40,15 +40,17 @@ config.show_close_tab_button_in_tabs = false
 
 -- タブのスタイル設定
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local background = "#5c6d74"
-  local foreground = "#FFFFFF"
-
+  local background = "#3b4252"  -- 非アクティブ: 背景（暗グレー）
+  local foreground = "#d8dee9"  -- 非アクティブ: 文字色（淡グレー）
+  
   if tab.is_active then
-    background = "#ae8b2d"
-    foreground = "#FFFFFF"
+    background = "#a3be8c"  -- アクティブ: 背景（グリーン）
+    foreground = "#2e3440"  -- アクティブ: 文字色（濃グレー）
   end
 
-  local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
+  -- タブ番号（1始まり）を追加
+  local tab_index = tab.tab_index + 1
+  local title = string.format(" %d: %s ", tab_index, wezterm.truncate_right(tab.active_pane.title, max_width))
 
   return {
     { Background = { Color = background } },
