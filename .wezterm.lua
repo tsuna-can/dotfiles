@@ -40,12 +40,12 @@ config.show_close_tab_button_in_tabs = false
 
 -- タブのスタイル設定
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local background = "#3b4252"  -- 非アクティブ: 背景（暗グレー）
-  local foreground = "#d8dee9"  -- 非アクティブ: 文字色（淡グレー）
-  
+  local background = "#3b4252" -- 非アクティブ: 背景（暗グレー）
+  local foreground = "#d8dee9" -- 非アクティブ: 文字色（淡グレー）
+
   if tab.is_active then
-    background = "#a3be8c"  -- アクティブ: 背景（グリーン）
-    foreground = "#2e3440"  -- アクティブ: 文字色（濃グレー）
+    background = "#a3be8c" -- アクティブ: 背景（グリーン）
+    foreground = "#2e3440" -- アクティブ: 文字色（濃グレー）
   end
 
   -- タブ番号（1始まり）を追加
@@ -107,7 +107,16 @@ config.keys = {
     mods = 'CMD|CTRL',
     action = wezterm.action.ToggleFullScreen,
   },
+  -- Shift+Enterで改行を送信
+  {
+    key = 'Enter',
+    mods = 'SHIFT',
+    action = wezterm.action.SendString('\n')
+  },
 }
+
+-- システムベル音を有効化（Claude Codeのタスク完了通知用）
+config.audible_bell = "SystemBeep"
 
 return config
 
