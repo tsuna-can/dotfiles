@@ -30,6 +30,7 @@ alias kdeld='kubectl delete deployment'
 alias kl='kubectl logs'
 alias klf='kubectl logs -f'
 alias pm='podman'
+alias pmc='podman-compose'
 alias lg='lazygit'
 alias ghr='cd $(ghq root)'
 
