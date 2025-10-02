@@ -77,6 +77,32 @@ config.keys = {
     mods = 'CMD',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
+  -- Cmd+dでアクティブなPaneを閉じる、それが最後のPaneならTabを閉じる
+  {
+    key = 'w',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentPane { confirm = true },
+  },
+  {
+    key = 'LeftArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Left',
+  },
+  {
+    key = 'RightArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Right',
+  },
+  {
+    key = 'UpArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Up',
+  },
+  {
+    key = 'DownArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Down',
+  },
   -- Cmd+左矢印でカーソルを前の単語に移動
   {
     key = "LeftArrow",
@@ -94,12 +120,6 @@ config.keys = {
       key = "f",
       mods = "META",
     },
-  },
-  -- Cmd+Shift+cでコピーモードを開始
-  {
-    key = 'C',
-    mods = 'CMD|SHIFT',
-    action = act.ActivateCopyMode
   },
   -- Cmd+Ctrl+fでフルスクリーンモードを切り替え
   {
@@ -119,4 +139,3 @@ config.keys = {
 config.audible_bell = "SystemBeep"
 
 return config
-
