@@ -1,7 +1,7 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  version = "4.4.7", -- https://github.com/folke/noice.nvim/issues/931
+  -- version = "4.4.7", -- https://github.com/folke/noice.nvim/issues/931
   opts = {
     -- add any options here
   },
@@ -11,13 +11,13 @@ return {
     -- OPTIONAL:
     --   `nvim-notify` is only needed, if you want to use the notification view.
     --   If not available, we use `mini` as the fallback
-    -- "rcarriga/nvim-notify",
+    "rcarriga/nvim-notify",
   },
   config = function()
     require("noice").setup({
       notify = {
         enabled = true,
-        view = "mini",
+        view = "notify",
       },
       lsp = {
         override = {
