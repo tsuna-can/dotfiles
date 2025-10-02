@@ -60,8 +60,14 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 -- ウィンドウの背景の透過度とぼかしの設定
-config.window_background_opacity = 0.75
-config.macos_window_background_blur = 20
+-- config.window_background_opacity = 0.9
+-- config.macos_window_background_blur = 20
+
+-- 非アクティブPaneの色調整
+config.inactive_pane_hsb = {
+  saturation = 0.7,
+  brightness = 0.5,
+}
 
 -- ショートカットキー設定
 config.keys = {
@@ -71,7 +77,7 @@ config.keys = {
     mods = 'CMD',
     action = act.SpawnTab 'CurrentPaneDomain',
   },
-  -- Cmd+dで新しいペインを作成(画面を分割)
+  -- Cmd+dで新しいペインを作成
   {
     key = 'd',
     mods = 'CMD',
