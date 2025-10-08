@@ -33,4 +33,5 @@ alias pm='podman'
 alias pmc='podman-compose'
 alias lg='lazygit'
 alias ghr='cd $(ghq root)'
+alias prt='cd $(git rev-parse --show-toplevel)'
 
