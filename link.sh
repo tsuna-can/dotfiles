@@ -6,7 +6,7 @@ create_symlink() {
   local link_name="$2"
 
   if [ -e "$link_name" ]; then
-    echo "File or directory $link_name already exists. Skipping..."
+    echo "File or directory '$link_name' already exists. Skipping..."
   else
     ln -fsv "${PWD}/${target_file}" "$link_name"
   fi
@@ -22,4 +22,8 @@ create_symlink ".ideavimrc" "${HOME}/.ideavimrc"
 create_symlink ".config/nvim" "${HOME}/.config/nvim"
 create_symlink ".config/sheldon" "${HOME}/.config/sheldon"
 create_symlink ".config/starship.toml" "${HOME}/.config/starship.toml"
+
+LAZYGIT_DIR="${HOME}/Library/Application Support/lazygit"
+mkdir -p "$LAZYGIT_DIR"
+create_symlink "lazygit/config.yml" "${LAZYGIT_DIR}/config.yml"
 

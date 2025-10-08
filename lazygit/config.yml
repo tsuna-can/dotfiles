@@ -1,0 +1,8 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --paging=never --true-color=auto --dark --side-by-side --line-numbers --syntax-theme=Dracula --width=variable --navigate
+
+gui:
+  showIcons: true
+
