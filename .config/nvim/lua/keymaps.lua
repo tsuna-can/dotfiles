@@ -20,9 +20,11 @@ map('n', '<leader>e', ':Oil<CR>', opts)
 map('n', '<C-p>', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', { noremap = true })
 map('n', '<C-g>', ':Telescope live_grep<CR>', { noremap = true })
 
--- Move to previous/next buffer
-map('n', '<leader>,', '<cmd>bprev<CR>', opts)
-map('n', '<leader>.', '<cmd>bnext<CR>', opts)
+-- Move to previous/next/first/last buffer
+map('n', '[b', ':bprevious<CR>', opts)
+map('n', ']b', ':bnext<CR>', opts)
+map('n', '[B', ':bfirst<CR>', opts)
+map('n', ']B', ':blast<CR>', opts)
 -- Save and close all buffer
 map('n', '<leader>q', '<cmd>wa | %bd<CR>', opts)
 -- Move current buffer to the right pane
