@@ -59,6 +59,34 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   }
 end)
 
+-- ステータスバーにWorkspaceを表示
+wezterm.on('update-status', function(window, pane)
+  local workspace = window:active_workspace()
+  
+  -- 全Workspaceのリストを取得
+  local workspaces = {}
+  for _, ws in ipairs(wezterm.mux.get_workspace_names()) do
+    if ws == workspace then
+      -- 現在のWorkspaceをハイライト
+      table.insert(workspaces, wezterm.format {
+        { Attribute = { Intensity = 'Bold' } },
+        { Foreground = { Color = '#7aa2f7' } },
+        { Text = ' ' .. ws .. ' ' },
+      })
+    else
+      table.insert(workspaces, wezterm.format {
+        { Text = ' ' .. ws .. ' ' },
+      })
+    end
+  end
+ 
+  -- ステータスバーの右側に表示
+  window:set_right_status(wezterm.format {
+    { Attribute = { Intensity = 'Bold' } },
+    { Text = '  Workspaces: ' },
+  } .. table.concat(workspaces, '|'))
+ end)
+
 -- ウィンドウの背景の透過度とぼかしの設定
 -- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 20
@@ -138,6 +166,36 @@ config.keys = {
     key = 'Enter',
     mods = 'SHIFT',
     action = wezterm.action.SendString('\n')
+  },
+  -- Change to next workspace
+  {
+    key = 'n',
+    mods = 'CMD',
+    action = act.SwitchWorkspaceRelative(1)
+  },
+  -- Change to previous workspace
+  {
+    key = 'p',
+    mods = 'CMD',
+    action = act.SwitchWorkspaceRelative(-1)
+  },
+  -- Create new workspace
+  {
+    key = 'a',
+    mods = 'CMD',
+    action = act.PromptInputLine {
+      description = "Create new workspace:",
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          window:perform_action(
+            act.SwitchToWorkspace {
+              name = line,
+            },
+            pane
+          )
+        end
+      end),
+    },
   },
 }
 
