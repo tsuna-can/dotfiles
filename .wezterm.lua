@@ -12,7 +12,7 @@ config.automatically_reload_config = true
 local act = wezterm.action
 
 -- フォントの設定
-config.font = wezterm.font("Firge35Nerd Console")
+config.font = wezterm.font("HackGen35 Console NF")
 
 -- フォントサイズの設定
 config.font_size = 15
