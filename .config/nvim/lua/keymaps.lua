@@ -48,3 +48,28 @@ map('n', '<leader>dc', '<cmd>lua require"dap".continue()<CR>', { noremap = true,
 map('n', '<leader>db', '<cmd>lua require"dap".toggle_breakpoint()<CR>', { noremap = true, desc = "Toggle Breakpoint" })
 map('n', '<leader>dt', '<cmd>lua require"dap".terminate()<CR>', { noremap = true, desc = "Terminate Debugging" })
 map('n', '<leader>dr', '<cmd>lua require"dap".repl.open()<CR>', { noremap = true, desc = "Open REPL" })
+
+-- ToggleTerm
+-- ターミナル切り替え
+map('n', '<leader>t1', '<cmd>ToggleTerm 1<CR>', { noremap = true, silent = true, desc = "Toggle Terminal 1" })
+map('n', '<leader>t2', '<cmd>ToggleTerm 2<CR>', { noremap = true, silent = true, desc = "Toggle Terminal 2" })
+map('n', '<leader>t3', '<cmd>ToggleTerm 3<CR>', { noremap = true, silent = true, desc = "Toggle Terminal 3" })
+map('n', '<leader>t4', '<cmd>ToggleTerm 4<CR>', { noremap = true, silent = true, desc = "Toggle Terminal 4" })
+-- ターミナルモード内でウィンドウ移動
+map('t', '<C-w>h', [[<C-\><C-n><C-w>h]], { noremap = true, silent = true, desc = "Move to left window" })
+map('t', '<C-w>j', [[<C-\><C-n><C-w>j]], { noremap = true, silent = true, desc = "Move to below window" })
+map('t', '<C-w>k', [[<C-\><C-n><C-w>k]], { noremap = true, silent = true, desc = "Move to above window" })
+map('t', '<C-w>l', [[<C-\><C-n><C-w>l]], { noremap = true, silent = true, desc = "Move to right window" })
+
+-- Lazygit
+map('n', '<leader>lg', function()
+  local Terminal = require('toggleterm.terminal').Terminal
+  local lazygit = Terminal:new({
+    cmd = 'lazygit',
+    direction = 'horizontal',
+    size = 20,
+    hidden = true,
+  })
+  lazygit:toggle()
+end, { noremap = true, silent = true, desc = "Toggle Lazygit" })
+
