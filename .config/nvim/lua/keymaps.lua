@@ -13,8 +13,8 @@ map({ 'n', 'v' }, '<leader>d', '"_d', { noremap = true, silent = true })
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
--- Oil
-map('n', '<leader>e', ':Oil<CR>', opts)
+-- Neo-tree
+map('n', '<leader>e', ':Neotree toggle<CR>', opts)
 
 -- Telescope
 map('n', '<C-p>', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', { noremap = true })
@@ -41,13 +41,6 @@ map(
 
 -- Save
 map('n', '<leader>w', ':w<CR>', opts)
-
--- DAP
-map('n', '<leader>du', '<cmd>lua require"dapui".toggle()<CR>', { noremap = true, desc = "Toggle DAP UI" })
-map('n', '<leader>dc', '<cmd>lua require"dap".continue()<CR>', { noremap = true, desc = "Continue Debugging" })
-map('n', '<leader>db', '<cmd>lua require"dap".toggle_breakpoint()<CR>', { noremap = true, desc = "Toggle Breakpoint" })
-map('n', '<leader>dt', '<cmd>lua require"dap".terminate()<CR>', { noremap = true, desc = "Terminate Debugging" })
-map('n', '<leader>dr', '<cmd>lua require"dap".repl.open()<CR>', { noremap = true, desc = "Open REPL" })
 
 -- ToggleTerm
 -- ターミナル切り替え
