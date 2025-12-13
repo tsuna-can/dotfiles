@@ -2,11 +2,11 @@ return {
   {
     'akinsho/toggleterm.nvim',
     version = "*",
-    direction = 'horizontal',
+    direction = 'vertical',
     config = function()
       require("toggleterm").setup {
-        direction = 'horizontal',
-        size = 20,
+        direction = 'vertical',
+        size = 80,
         open_mapping = [[<c-\>]],
         persist_mode = false,
         winbar = {
