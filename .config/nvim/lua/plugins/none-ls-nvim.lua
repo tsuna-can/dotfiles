@@ -1,6 +1,6 @@
 return {
   "nvimtools/none-ls.nvim",
-  enabled = false,
+  enabled = true,
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local null_ls = require("null-ls")
@@ -45,6 +45,10 @@ return {
 
         -- sh
         formatting.shfmt,
+
+        -- Ruby
+        formatting.rubocop,
+        diagnostics.rubocop,
 
         -- other
         -- diagnostics.write_good,

@@ -9,10 +9,6 @@ map("n", "<leader>a", "gg<S-v>G")
 map("n", "x", '"_x', opts)
 map({ 'n', 'v' }, '<leader>d', '"_d', { noremap = true, silent = true })
 
--- LSP
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-
 -- Neo-tree
 map('n', '<leader>e', ':Neotree toggle<CR>', opts)
 
@@ -31,13 +27,6 @@ map('n', '<leader>q', '<cmd>wa | %bd<CR>', opts)
 map('n', '<leader>>', ':wincmd L<CR>', opts)
 -- Move current buffer to the left pane
 map('n', '<leader><', ':wincmd H<CR>', opts)
-
--- Format
-map(
-  "n",
-  "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>",
-  opts
-)
 
 -- Save
 map('n', '<leader>w', ':w<CR>', opts)

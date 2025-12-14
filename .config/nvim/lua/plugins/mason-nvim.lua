@@ -14,9 +14,11 @@ return {
         "jsonls",
         "taplo",
         "yamlls",
-        "gopls"
-      }
+        "gopls",
+        "clangd",
+        "solargraph"
+      },
+      automatic_installation = true,
     }
   end
 }
-
