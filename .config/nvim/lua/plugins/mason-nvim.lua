@@ -6,6 +6,9 @@ return {
   },
   config = function()
     require("mason").setup()
+
+    local lsp_defaults = require("config.lsp.default")
+
     require("mason-lspconfig").setup {
       ensure_installed = {
         "lua_ls",
@@ -16,9 +19,18 @@ return {
         "yamlls",
         "gopls",
         "clangd",
-        "solargraph"
+        "solargraph",
+        "ts_ls"
       },
       automatic_installation = true,
+      handlers = {
+        function(server_name)
+          require("lspconfig")[server_name].setup {
+            on_attach = lsp_defaults.on_attach,
+            capabilities = lsp_defaults.capabilities,
+          }
+        end,
+      },
     }
   end
 }
