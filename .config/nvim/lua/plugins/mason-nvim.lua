@@ -20,7 +20,8 @@ return {
         "gopls",
         "clangd",
         "solargraph",
-        "ts_ls"
+        "ts_ls",
+        "eslint"
       },
       automatic_installation = true,
       handlers = {

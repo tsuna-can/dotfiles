@@ -7,17 +7,11 @@ return {
 
     local formatting = null_ls.builtins.formatting
     local diagnostics = null_ls.builtins.diagnostics
-    local code_actions = null_ls.builtins.code_actions
 
     null_ls.setup({
       on_attach = require("config.lsp.default").on_attach,
       debug = false,
       sources = {
-        -- js, ts, jsx, tsx, vue
-        diagnostics.eslint,
-        code_actions.eslint,
-        formatting.eslint,
-
         -- lua
         formatting.stylua,
 
@@ -29,7 +23,7 @@ return {
           extra_filetypes = { "vue" },
         }),
 
-        -- html
+        -- html, json, markdown, etc
         formatting.prettierd.with({
           filetypes = {
             "vue",
@@ -41,7 +35,6 @@ return {
             "toml",
           },
         }),
-        diagnostics.tidy,
 
         -- sh
         formatting.shfmt,
