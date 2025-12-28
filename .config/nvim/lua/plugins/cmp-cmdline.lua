@@ -1,5 +1,9 @@
 local M = { "hrsh7th/cmp-cmdline" }
-M.dependencies = { "nvim-cmp" }
+M.dependencies = {
+  "nvim-cmp",
+  { "tzachar/cmp-fuzzy-path", dependencies = { "tzachar/fuzzy.nvim" } },
+  "ray-x/cmp-treesitter",
+}
 M.keys = { ":", "/", "?" }
 
 M.config = function()
