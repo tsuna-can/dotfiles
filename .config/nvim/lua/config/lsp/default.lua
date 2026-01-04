@@ -22,6 +22,8 @@ M.on_attach = function(client, bufnr)
   -- 診断表示
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
+  vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
   -- ドキュメントハイライト（対応している場合）
   if client.server_capabilities.documentHighlightProvider then

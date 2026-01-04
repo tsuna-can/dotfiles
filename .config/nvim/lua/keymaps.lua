@@ -21,8 +21,6 @@ map('n', '[b', ':bprevious<CR>', opts)
 map('n', ']b', ':bnext<CR>', opts)
 map('n', '[B', ':bfirst<CR>', opts)
 map('n', ']B', ':blast<CR>', opts)
--- Save and close all buffer
-map('n', '<leader>q', '<cmd>wa | %bd<CR>', opts)
 -- Move current buffer to the right pane
 map('n', '<leader>>', ':wincmd L<CR>', opts)
 -- Move current buffer to the left pane
