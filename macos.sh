@@ -30,3 +30,6 @@ defaults write -g NSInitialToolTipDelay -integer 100
 # Finderで隠しファイルを表示
 defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder
 
+# ピリオドの自動入力をオフ
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
