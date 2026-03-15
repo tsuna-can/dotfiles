@@ -23,6 +23,10 @@ create_symlink ".config/nvim" "${HOME}/.config/nvim"
 create_symlink ".config/sheldon" "${HOME}/.config/sheldon"
 create_symlink ".config/starship.toml" "${HOME}/.config/starship.toml"
 
+GHOSTTY_DIR="${HOME}/.config/ghostty"
+mkdir -p "$GHOSTTY_DIR"
+create_symlink ".config/ghostty/config" "${GHOSTTY_DIR}/config"
+
 LAZYGIT_DIR="${HOME}/Library/Application Support/lazygit"
 mkdir -p "$LAZYGIT_DIR"
 create_symlink "lazygit/config.yml" "${LAZYGIT_DIR}/config.yml"

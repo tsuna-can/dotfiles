@@ -1,0 +1,17 @@
+font-family = HackGen Console NF
+font-size = 14
+
+theme = Catppuccin Mocha
+
+window-padding-x = 8
+window-padding-y = 4
+
+window-decoration = false
+
+macos-option-as-alt = true
+
+keybind = global:super+grave_accent=toggle_quick_terminal
+keybind = super+enter=toggle_fullscreen
+quick-terminal-space-behavior = remain
+quick-terminal-size = 70%
+
