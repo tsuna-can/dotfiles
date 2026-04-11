@@ -2,12 +2,26 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 vim.g.mapleader = ' '
 
+-- Save
+map('n', '<leader>w', ':w<CR>', opts)
+
 -- Select all
 map("n", "<leader>a", "gg<S-v>G")
 
 -- Delete without affecting the registers
 map("n", "x", '"_x', opts)
 map({ 'n', 'v' }, '<leader>d', '"_d', { noremap = true, silent = true })
+
+-- Move current buffer to the right pane
+map('n', '<leader>>', ':wincmd L<CR>', opts)
+-- Move current buffer to the left pane
+map('n', '<leader><', ':wincmd H<CR>', opts)
+
+-- ターミナルモード内でウィンドウ移動
+map('t', '<C-w>h', [[<C-\><C-n><C-w>h]], { noremap = true, silent = true, desc = "Move to left window" })
+map('t', '<C-w>j', [[<C-\><C-n><C-w>j]], { noremap = true, silent = true, desc = "Move to below window" })
+map('t', '<C-w>k', [[<C-\><C-n><C-w>k]], { noremap = true, silent = true, desc = "Move to above window" })
+map('t', '<C-w>l', [[<C-\><C-n><C-w>l]], { noremap = true, silent = true, desc = "Move to right window" })
 
 -- Neo-tree
 map('n', '<leader>e', ':Neotree toggle<CR>', opts)
@@ -16,30 +30,11 @@ map('n', '<leader>e', ':Neotree toggle<CR>', opts)
 map('n', '<C-p>', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', { noremap = true })
 map('n', '<C-g>', ':Telescope live_grep<CR>', { noremap = true })
 
--- Move to previous/next/first/last buffer
-map('n', '[b', ':bprevious<CR>', opts)
-map('n', ']b', ':bnext<CR>', opts)
-map('n', '[B', ':bfirst<CR>', opts)
-map('n', ']B', ':blast<CR>', opts)
--- Move current buffer to the right pane
-map('n', '<leader>>', ':wincmd L<CR>', opts)
--- Move current buffer to the left pane
-map('n', '<leader><', ':wincmd H<CR>', opts)
-
--- Save
-map('n', '<leader>w', ':w<CR>', opts)
-
--- ToggleTerm
--- ターミナル切り替え
-map('n', '<leader>t1', '<cmd>ToggleTerm 1<CR>', { noremap = true, silent = true, desc = "Toggle Terminal 1" })
-map('n', '<leader>t2', '<cmd>ToggleTerm 2<CR>', { noremap = true, silent = true, desc = "Toggle Terminal 2" })
-map('n', '<leader>t3', '<cmd>ToggleTerm 3<CR>', { noremap = true, silent = true, desc = "Toggle Terminal 3" })
-map('n', '<leader>t4', '<cmd>ToggleTerm 4<CR>', { noremap = true, silent = true, desc = "Toggle Terminal 4" })
--- ターミナルモード内でウィンドウ移動
-map('t', '<C-w>h', [[<C-\><C-n><C-w>h]], { noremap = true, silent = true, desc = "Move to left window" })
-map('t', '<C-w>j', [[<C-\><C-n><C-w>j]], { noremap = true, silent = true, desc = "Move to below window" })
-map('t', '<C-w>k', [[<C-\><C-n><C-w>k]], { noremap = true, silent = true, desc = "Move to above window" })
-map('t', '<C-w>l', [[<C-\><C-n><C-w>l]], { noremap = true, silent = true, desc = "Move to right window" })
+-- Move to previous/next/first/last buffer (barbar order)
+map('n', '[b', '<Cmd>BufferPrevious<CR>', opts)
+map('n', ']b', '<Cmd>BufferNext<CR>', opts)
+map('n', '[B', '<Cmd>BufferFirst<CR>', opts)
+map('n', ']B', '<Cmd>BufferLast<CR>', opts)
 
 -- Lazygit
 map('n', '<leader>lg', function()

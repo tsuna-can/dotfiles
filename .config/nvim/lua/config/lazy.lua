@@ -13,24 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require('options')
 require('keymaps')
-
--- Choose the plugins to load based on the environment
-local is_raspberrypi = false
-local is_vscode = vim.g.vscode == 1
-
--- Change the plugins to load based on the environment
-local plugins = is_vscode and
-    {
-      { import = "plugins.im-select-nvim" }
-    }
-    or
-    {
-      -- load all plugins
-      { import = "plugins" }
-    }
+require('autocmds')
 
 require("lazy").setup({
-  spec = plugins,
+  spec = { { import = "plugins" } },
   install = { colorscheme = { "habamax" } },
   performance = {
     rtp = {
