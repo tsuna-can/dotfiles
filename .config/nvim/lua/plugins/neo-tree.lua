@@ -65,6 +65,14 @@ return {
         ["<c-x>"] = "clear_filter",
         ["[g"] = "prev_git_modified",
         ["]g"] = "next_git_modified",
+        ["+"] = function()
+          local win = vim.api.nvim_get_current_win()
+          vim.api.nvim_win_set_width(win, vim.api.nvim_win_get_width(win) + 5)
+        end,
+        ["-"] = function()
+          local win = vim.api.nvim_get_current_win()
+          vim.api.nvim_win_set_width(win, math.max(10, vim.api.nvim_win_get_width(win) - 5))
+        end,
       },
     },
     filesystem = {
