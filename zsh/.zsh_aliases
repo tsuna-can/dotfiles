@@ -1,4 +1,4 @@
-alias v='nvim .'
+alias v='nvim'
 alias code='code .'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -34,4 +34,5 @@ alias pmc='podman-compose'
 alias lg='lazygit'
 alias ghr='cd $(ghq root)'
 alias prt='cd $(git rev-parse --show-toplevel)'
+alias c='claude'
 
