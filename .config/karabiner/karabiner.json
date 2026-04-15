@@ -40,7 +40,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "up_arrow",
+                                    "key_code": "k",
                                     "modifiers": { "mandatory": ["option", "command"] }
                                 },
                                 "to": [{ "mouse_key": { "vertical_wheel": -32 } }],
@@ -48,7 +48,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "down_arrow",
+                                    "key_code": "j",
                                     "modifiers": { "mandatory": ["option", "command"] }
                                 },
                                 "to": [{ "mouse_key": { "vertical_wheel": 32 } }],
@@ -56,7 +56,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "right_arrow",
+                                    "key_code": "l",
                                     "modifiers": { "mandatory": ["option", "command"] }
                                 },
                                 "to": [{ "mouse_key": { "horizontal_wheel": -32 } }],
@@ -64,7 +64,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "left_arrow",
+                                    "key_code": "h",
                                     "modifiers": { "mandatory": ["option", "command"] }
                                 },
                                 "to": [{ "mouse_key": { "horizontal_wheel": 32 } }],
