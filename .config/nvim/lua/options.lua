@@ -13,4 +13,5 @@ opt.shiftwidth = 2
 opt.wrap = true
 opt.laststatus = 3
 opt.showmatch = true
+opt.signcolumn = "auto:2"
 
