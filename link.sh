@@ -16,10 +16,6 @@ create_symlink() {
 create_symlink "zsh/.zshrc" "${HOME}/.zshrc"
 create_symlink "zsh/.zsh_aliases" "${HOME}/.zsh_aliases"
 create_symlink "zsh/.zsh_functions" "${HOME}/.zsh_functions"
-create_symlink ".wezterm.lua" "${HOME}/.wezterm.lua"
-create_symlink ".hammerspoon" "${HOME}/.hammerspoon"
-create_symlink ".ideavimrc" "${HOME}/.ideavimrc"
-create_symlink ".config/nvim" "${HOME}/.config/nvim"
 
 LAZYGIT_DIR="${HOME}/Library/Application Support/lazygit"
 mkdir -p "$LAZYGIT_DIR"

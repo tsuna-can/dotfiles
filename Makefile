@@ -2,9 +2,20 @@
 all:
 	@echo "Please specify a target"
 
+.PHONY: link-wezterm
+link-wezterm:
+	chmod +x ./wezterm/link.sh
+	./wezterm/link.sh
+
+.PHONY: link-ideavim
+link-ideavim:
+	chmod +x ./ideavim/link.sh
+	./ideavim/link.sh
+
 .PHONY: link-nvim
 link-nvim:
-	ln -fsv ${PWD}/.config/nvim ${HOME}/.config/nvim
+	chmod +x ./nvim/link.sh
+	./nvim/link.sh
 
 .PHONY: install-sdkman
 install-sdkman:
@@ -15,6 +26,11 @@ install-sdkman:
 mac-config:
 	chmod +x ./macos.sh
 	./macos.sh
+
+.PHONY: link-hammerspoon
+link-hammerspoon:
+	chmod +x ./hammerspoon/link.sh
+	./hammerspoon/link.sh
 
 .PHONY: link-ghostty
 link-ghostty:
@@ -32,7 +48,7 @@ link-sheldon:
 	./sheldon/link.sh
 
 .PHONY: link
-link: link-ghostty link-starship link-sheldon
+link: link-ghostty link-starship link-sheldon link-wezterm link-ideavim link-nvim link-hammerspoon
 	sudo chmod +x ./link.sh
 	./link.sh
 
