@@ -21,8 +21,18 @@ link-ghostty:
 	chmod +x ./ghostty/link.sh
 	./ghostty/link.sh
 
+.PHONY: link-starship
+link-starship:
+	chmod +x ./starship/link.sh
+	./starship/link.sh
+
+.PHONY: link-sheldon
+link-sheldon:
+	chmod +x ./sheldon/link.sh
+	./sheldon/link.sh
+
 .PHONY: link
-link: link-ghostty
+link: link-ghostty link-starship link-sheldon
 	sudo chmod +x ./link.sh
 	./link.sh
 

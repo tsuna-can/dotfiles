@@ -20,8 +20,6 @@ create_symlink ".wezterm.lua" "${HOME}/.wezterm.lua"
 create_symlink ".hammerspoon" "${HOME}/.hammerspoon"
 create_symlink ".ideavimrc" "${HOME}/.ideavimrc"
 create_symlink ".config/nvim" "${HOME}/.config/nvim"
-create_symlink ".config/sheldon" "${HOME}/.config/sheldon"
-create_symlink ".config/starship.toml" "${HOME}/.config/starship.toml"
 
 LAZYGIT_DIR="${HOME}/Library/Application Support/lazygit"
 mkdir -p "$LAZYGIT_DIR"
