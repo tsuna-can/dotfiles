@@ -1,5 +1,7 @@
+-- 'lua' を除外: nvim-treesitter の lua.so は Neovim 0.12.1 の highlights.scm
+-- と互換性がない（新文法では operator フィールドが存在しない）。
+-- Neovim 組み込みの lua.so を使わせることで解消する。
 local parsers_maintained = {
-  'lua',
   'typescript',
   'scss',
   'css',
@@ -10,21 +12,28 @@ local parsers_maintained = {
   'markdown',
   'markdown_inline',
   'tsx',
-  'html'
+  'html',
+  'kotlin'
 }
 
 local M = {
   "nvim-treesitter/nvim-treesitter",
-  build = function()
-    require("nvim-treesitter.install").update({ with_sync = true })()
-  end,
+  branch = "main",
+  build = ":TSUpdate",
   config = function()
-    local configs = require("nvim-treesitter.configs")
-    configs.setup({
+    require("nvim-treesitter").setup({
       ensure_installed = parsers_maintained,
-      sync_install = false,
-      highlight = { enable = true },
-      indent = { enable = true },
+    })
+    -- lua を除外: nvim-treesitter の lua.so は Neovim 0.12.1 の highlights.scm
+    -- と互換性がない。Neovim 組み込みの lua.so を使わせることで解消する。
+    vim.api.nvim_create_autocmd('FileType', {
+      group = vim.api.nvim_create_augroup('treesitter_highlight', { clear = true }),
+      pattern = '*',
+      callback = function(args)
+        if args.match ~= 'lua' then
+          pcall(vim.treesitter.start)
+        end
+      end,
     })
   end,
 }

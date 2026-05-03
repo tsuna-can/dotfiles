@@ -9,7 +9,13 @@ return {
 
     local lsp_defaults = require("config.lsp.default")
 
-    require("mason-lspconfig").setup {
+    -- 全サーバー共通設定
+    vim.lsp.config('*', {
+      on_attach = lsp_defaults.on_attach,
+      capabilities = lsp_defaults.capabilities,
+    })
+
+    require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
         "bashls",
@@ -21,17 +27,10 @@ return {
         "clangd",
         "solargraph",
         "ts_ls",
-        "eslint"
+        "eslint",
+        "kotlin_language_server"
       },
-      automatic_installation = true,
-      handlers = {
-        function(server_name)
-          require("lspconfig")[server_name].setup {
-            on_attach = lsp_defaults.on_attach,
-            capabilities = lsp_defaults.capabilities,
-          }
-        end,
-      },
-    }
+      automatic_enable = true,
+    })
   end
 }

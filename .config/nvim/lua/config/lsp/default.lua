@@ -20,8 +20,8 @@ M.on_attach = function(client, bufnr)
   end, opts)
 
   -- 診断表示
-  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-  vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, opts)
+  vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, opts)
   vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
