@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # リピート入力認識の速度を上げる
 defaults write -g InitialKeyRepeat -int 13
 

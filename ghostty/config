@@ -3,10 +3,13 @@ font-size = 14
 
 theme = Catppuccin Mocha
 
+background-opacity = 0.85
+background-blur-radius = 20
+
 window-padding-x = 8
 window-padding-y = 4
 
-window-decoration = false
+window-decoration = true 
 
 macos-option-as-alt = true
 
