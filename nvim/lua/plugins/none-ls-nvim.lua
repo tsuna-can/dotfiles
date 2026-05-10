@@ -40,8 +40,16 @@ return {
         formatting.shfmt,
 
         -- Ruby
-        formatting.rubocop,
-        diagnostics.rubocop,
+        formatting.rubocop.with({
+          condition = function(utils)
+            return utils.root_has_file({ "Gemfile", ".rubocop.yml" })
+          end,
+        }),
+        diagnostics.rubocop.with({
+          condition = function(utils)
+            return utils.root_has_file({ "Gemfile", ".rubocop.yml" })
+          end,
+        }),
 
         -- other
         -- diagnostics.write_good,
