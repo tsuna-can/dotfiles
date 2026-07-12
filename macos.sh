@@ -26,6 +26,9 @@ defaults write com.apple.dock mineffect suck;killall Dock
 # ミッションコントロールのアニメーション時間を変更
 defaults write com.apple.dock expose-animation-duration -float 0.1;killall Dock
 
+# ウィンドウ切り替え(スペース切り替え)時のアニメーションを無効化
+defaults write com.apple.dock workspaces-swoosh-animation-off -bool YES;killall Dock
+
 # ツールチップの表示速度
 defaults write -g NSInitialToolTipDelay -integer 100
 
@@ -34,4 +37,7 @@ defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder
 
 # ピリオドの自動入力をオフ
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# 全画面表示中でもメニューバー(時計など)を表示
+defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -bool true
 
