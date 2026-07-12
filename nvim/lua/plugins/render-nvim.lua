@@ -5,7 +5,7 @@ return {
   cmd = { "RenderMarkdown" },
   dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
   opts = {
-    anti_conceal = { enabled = false },
+    anti_conceal = { enabled = true },
   },
 }
 
