@@ -12,6 +12,8 @@ fi
 EDITOR=nvim
 
 export PATH=$PATH:$(go env GOPATH)/bin
+# Homebrew は cask 専用として残す。Nix を優先するため末尾に追加
+export PATH="$PATH:/opt/homebrew/bin"
 
 # adb
 export PATH=$PATH:/Users/tsunacan/Library/Android/sdk/platform-tools
