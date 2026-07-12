@@ -25,9 +25,9 @@
     # 既存 Homebrew 環境の整理は移行計画の Phase 3 で手動で行う。
   };
 
-  # Determinate Nix（--determinate オプション）を使う場合のみ有効化すること。
-  # upstream Nix（インストーラーのデフォルト）では設定不要。
-  # nix.enable = false;
+  # Determinate Nix はデーモンを自己管理するため、nix-darwin 側の Nix 管理を無効化する
+  # （有効のままだと switch が失敗する）。`nix --version` が "Determinate Nix" を返すことを確認済み。
+  nix.enable = false;
 
   system.stateVersion = 6;
 }
