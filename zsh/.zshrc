@@ -11,10 +11,10 @@ fi
 # To use nvim in edit-command-line
 EDITOR=nvim
 
-export PATH="/opt/homebrew/bin:$PATH"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
+
+# adb
+export PATH=$PATH:/Users/tsunacan/Library/Android/sdk/platform-tools
 
 # History setting
 HISTFILE=~/.zsh_history
@@ -34,10 +34,10 @@ setopt extended_history
 setopt share_history
 setopt print_eight_bit
 
+export CLAUDE_CODE_NO_FLICKER=1
+
 # Load sheldon
 eval "$(sheldon source)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+. "$HOME/.local/bin/env"
 
