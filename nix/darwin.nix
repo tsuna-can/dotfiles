@@ -1,10 +1,12 @@
-{ pkgs, ... }:
+# username は flake.nix の let で定義され specialArgs 経由で渡される。
+# 別ユーザー名の PC に適用する場合は flake.nix 側だけ書き換えればよい。
+{ pkgs, username, ... }:
 {
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   # nix-darwin の一部オプション（homebrew 等）が対象ユーザーを要求する
-  system.primaryUser = "tsunacan";
-  users.users.tsunacan.home = "/Users/tsunacan";
+  system.primaryUser = username;
+  users.users.${username}.home = "/Users/${username}";
 
   # /etc/zshrc に Nix のパス設定を書き込む（zsh を使うなら必須）
   programs.zsh.enable = true;
