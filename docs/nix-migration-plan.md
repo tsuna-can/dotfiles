@@ -257,13 +257,13 @@ GUI / cask:
 
 ## Phase 2: dotfiles への反映
 
-- [ ] 検証済みブランチを main にマージ（flake.nix, flake.lock, nix/ を含める）
-- [ ] Makefile 更新:
-  - `nix-switch` ターゲット追加（`sudo darwin-rebuild switch --flake .#default`）
+- [ ] 検証済みブランチを PR 経由で main にマージ（flake.nix, flake.lock, nix/ を含める）
+- [x] Makefile 更新:
+  - `nix-switch` / `nix-bootstrap` ターゲット追加
   - `setup-mac` を Nix ベースの手順に書き換え
   - `install-sdkman` ターゲット削除（sdkman 廃止のため）
-- [ ] README 更新（新PCセットアップ手順）
-- [ ] Brewfile 削除
+- [x] README 更新（新PCセットアップ手順）
+- [x] Brewfile 削除
 
 注: ghostty / wezterm / karabiner はアプリを入れない判断だが、設定ディレクトリと
 Makefile の link ターゲットは意図的に残す（将来使う場合に備える）。

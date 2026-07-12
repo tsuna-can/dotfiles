@@ -17,10 +17,14 @@ link-nvim:
 	chmod +x ./nvim/link.sh
 	./nvim/link.sh
 
-.PHONY: install-sdkman
-install-sdkman:
-	curl -s "https://get.sdkman.io" | bash
-	source "${HOME}/.sdkman/bin/sdkman-init.sh"
+.PHONY: nix-switch
+nix-switch:
+	sudo darwin-rebuild switch --flake .#default
+
+# 初回のみ（darwin-rebuild が未導入の状態から適用する）
+.PHONY: nix-bootstrap
+nix-bootstrap:
+	sudo nix run nix-darwin -- switch --flake .#default
 
 .PHONY: mac-config
 mac-config:
@@ -54,4 +58,4 @@ link: link-ghostty link-starship link-sheldon link-wezterm link-ideavim link-nvi
 
 # Setup for Mac
 .PHONY: setup-mac
-setup-mac: install-sdkman mac-config link
+setup-mac: nix-bootstrap mac-config link
