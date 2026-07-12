@@ -2,7 +2,6 @@ tap "daipeihust/tap"
 tap "homebrew/bundle"
 tap "jesseduffield/lazydocker"
 tap "jesseduffield/lazygit"
-tap "koyeb/tap"
 tap "nikitabobko/tap"
 tap "xwmx/taps"
 # ARP scanning and fingerprinting tool
@@ -45,8 +44,6 @@ brew "hugo"
 brew "jq"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
-# Template-free customization of Kubernetes YAML manifests
-brew "kustomize"
 # Simple terminal UI for git commands
 brew "lazygit"
 # C library for reading, creating, and modifying zip archives
@@ -59,10 +56,6 @@ brew "luarocks"
 brew "mkcert"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Ruby version manager
-brew "rbenv"
-# Persistent key-value database, with built-in net interface
-brew "redis"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Fast, configurable, shell plugin manager
