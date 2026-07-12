@@ -8,7 +8,6 @@
     awscli2
     bat
     cmake
-    corepack
     curl
     delta # 旧: git-delta
     delve # 旧: go install dlv
@@ -31,7 +30,7 @@
     luarocks
     mkcert
     neovim
-    nodejs # 旧: Volta 管理
+    nodejs # 旧: Volta 管理。corepack 同梱のため corepack の個別追加は不可（衝突する）
     ripgrep
     sheldon
     starship
