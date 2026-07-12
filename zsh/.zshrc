@@ -16,7 +16,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export PATH="$PATH:/opt/homebrew/bin"
 
 # adb
-export PATH=$PATH:/Users/tsunacan/Library/Android/sdk/platform-tools
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 
 # History setting
 HISTFILE=~/.zsh_history
