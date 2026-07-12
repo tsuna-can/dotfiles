@@ -22,16 +22,12 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 git clone https://github.com/tsuna-can/dotfiles.git
 cd dotfiles
 
-# 5. パッケージ導入 + macOS 設定 + シンボリックリンク作成
+# 5. ユーザー名が tsunacan 以外の PC の場合は、flake.nix 内の
+#    `username = "tsunacan";` の1行を書き換える（他のファイルはユーザー名に依存しない）
+
+# 6. パッケージ導入 + macOS 設定 + シンボリックリンク作成
 make setup-mac
-
-# 6. claude-code（Nix 管理外・公式インストーラー）
-curl -fsSL https://claude.ai/install.sh | bash
 ```
-
-> **NOTE**: ユーザー名が `tsunacan` 以外の PC に適用する場合は、
-> `flake.nix` 内の `username = "tsunacan";` の1行を書き換えること。
-> それ以外のファイルはユーザー名に依存しない。
 
 ## Daily usage
 
