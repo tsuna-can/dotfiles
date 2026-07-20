@@ -51,8 +51,13 @@ link-sheldon:
 	chmod +x ./sheldon/link.sh
 	./sheldon/link.sh
 
+.PHONY: link-claude
+link-claude:
+	chmod +x ./claude/link.sh
+	./claude/link.sh
+
 .PHONY: link
-link: link-ghostty link-starship link-sheldon link-wezterm link-ideavim link-nvim link-hammerspoon
+link: link-ghostty link-starship link-sheldon link-wezterm link-ideavim link-nvim link-hammerspoon link-claude
 	sudo chmod +x ./link.sh
 	./link.sh
 
